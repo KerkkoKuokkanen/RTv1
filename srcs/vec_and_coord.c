@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:52:00 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/17 14:52:32 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/19 11:53:11 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 void	vec_from_cam(t_dot *vec, int x, int y, t_cl cl)
 {
 	double	len;
-	double	x1;
-	double	y1;
-	double	z1;
 
 	add_angle(vec, x, y, cl);
 	len = sqrt(vec->x * vec->x + vec->y * vec->y + vec->z * vec->z);

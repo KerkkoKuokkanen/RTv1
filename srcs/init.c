@@ -6,13 +6,13 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 15:02:26 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/17 15:34:38 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/19 11:54:20 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rtv1.h"
 
-void	init(t_cl *cl, int argc, char **argv)
+void	init(t_cl *cl, int argc)
 {
 	if (argc != 2)
 	{

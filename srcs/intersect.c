@@ -6,13 +6,13 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:46:03 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/18 15:01:33 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/19 11:52:30 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rtv1.h"
 
-int	sign_check(t_screen *point, t_sign *sign, double t2, t_cl cl)
+int	sign_check(t_screen *point, double t2, t_cl cl)
 {
 	double	light;
 
@@ -55,7 +55,6 @@ int	second_intersection(t_screen *point, t_sign *sign, t_cl cl, int i)
 int	check_intersections(t_screen *point, t_sign *sign, t_cl cl)
 {
 	int	i;
-	int	j;
 	int	bool;
 
 	i = 0;

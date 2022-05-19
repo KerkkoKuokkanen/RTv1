@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 12:16:36 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/17 12:20:33 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/19 11:51:55 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	add_angle(t_dot *vec, int x, int y, t_cl cl)
 
 t_dot	make_vec_from_point_to_light(t_sign sign, t_cl cl, double *len)
 {
-	t_dot	vec;
 	t_dot	xyz;
 
 	xyz.x = cl.light_x - sign.x;
@@ -50,7 +49,6 @@ t_dot	make_vec_from_point_to_light(t_sign sign, t_cl cl, double *len)
 
 t_dot	make_vec_from_point_to_cam(t_sign sign, t_cl cl, double *len)
 {
-	t_dot	vec;
 	t_dot	xyz;
 
 	xyz.x = cl.cam_x - sign.x;

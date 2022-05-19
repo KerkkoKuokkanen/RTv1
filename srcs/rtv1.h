@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 15:40:03 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/18 19:19:14 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/19 11:56:00 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # define CONE_H_HEIGHT 100
 
 # include <stdlib.h>
-# include "../sdl_include/SDL.h"
+# include <SDL2/SDL.h>
 # include "../libft/libft.h"
 # include <math.h>
 # include <unistd.h>
@@ -127,7 +127,7 @@ int			intersect_sphere(t_screen *point, t_sign *sign, t_cl cl, int curr);
 int			cone_intersect(t_screen *point, t_sign *sign, t_cl cl);
 int			cylinder_intersect(t_screen *point, t_sign *sign, t_cl cl);
 int			check_intersections(t_screen *point, t_sign *sign, t_cl cl);
-int			sign_check(t_screen *point, t_sign *sign, double t2, t_cl cl);
+int			sign_check(t_screen *point, double t2, t_cl cl);
 int			get_next_line(const int fd, char **line);
 int			plane_intersect(t_screen *point, t_sign *sign, t_cl cl);
 int			dist_from_cyl(t_cl *cl, t_sign sign, int s);
@@ -178,7 +178,7 @@ void		get_angle(t_sign *obj, int count, int i, char *line);
 void		coord_cam(int count, t_cl *cl, char *line, int i);
 void		angle_cam(int count, t_cl *cl, char *line, int i);
 void		get_coord_light(t_cl *cl, int count, int i, char *line);
-void		init(t_cl *cl, int argc, char **argv);
+void		init(t_cl *cl, int argc);
 void		sign_check_dist_to_obj(t_sign *sign, t_cl *cl);
 void		cast_to_function(t_xy xy, t_screen *point, t_sign *sign, t_cl *cl);
 void		get_min_max_dist(t_draw *drw, double dist, int curr);
