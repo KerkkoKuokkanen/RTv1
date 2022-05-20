@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 15:40:03 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/19 11:56:00 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/20 12:04:52 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,19 +54,17 @@ typedef struct t_sign
 	int		x;
 	int		y;
 	int		z;
-	int		io;
 	int		rad;
 	int		a_x;
 	int		a_y;
 	int		a_z;
-	int		color;
-	int		i;
 	t_dot	vector;
 	t_dot	cone;
 }				t_sign;
 
 typedef struct t_cl
 {
+	int		cl;
 	int		cam_x;
 	int		cam_y;
 	int		cam_z;
@@ -77,7 +75,6 @@ typedef struct t_cl
 	int		a_y;
 	int		a_z;
 	int		light_seen;
-	int		o_in;
 	int		bright;
 }				t_cl;
 

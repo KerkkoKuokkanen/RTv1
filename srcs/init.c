@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 15:02:26 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/19 11:54:20 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/20 11:56:31 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	init(t_cl *cl, int argc)
 		write(1, "error\n", 6);
 		exit(0);
 	}
+	cl->cl = 0;
 	cl->light_seen = 1;
-	cl->o_in = 0;
 }
 
 void	points_init(t_xy *xy, t_draw *drw, t_sign *sign, t_cl *cl)

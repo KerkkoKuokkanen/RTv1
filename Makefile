@@ -6,7 +6,7 @@
 #    By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 15:19:51 by kkuokkan          #+#    #+#              #
-#    Updated: 2022/05/19 11:51:21 by kkuokkan         ###   ########.fr        #
+#    Updated: 2022/05/19 12:05:46 by kkuokkan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,3 +42,17 @@ $(NAME): libft/libft.a $(OBJ) $(HDR)
 
 .c.o: $(HDR)
 		@gcc $(FLAGS) $(INCLUDES) $(HEADERS) -c $< -o $@
+
+clean:
+	@make clean -C libft
+	@rm -rf $(OBJ)
+
+fclean:
+	@make fclean -C libft
+	@rm -rf $(OBJ)
+	@rm -rf $(NAME)
+
+libft/libft.a:
+	@make -C libft
+
+re: fclean all

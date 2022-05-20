@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 15:13:05 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/18 19:10:58 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/20 12:05:07 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,6 @@ void	sphere_sign_check(t_cl *cl, t_sign *sign, int i)
 	len = sqrt(x * x + y * y + z * z);
 	if (len < sign[i].rad)
 	{
-		sign[i].io = 1;
-		cl->o_in = 1;
 		if (dist_to_light(sign[i], cl) == 0)
 			cl->light_seen = 0;
 	}
@@ -72,8 +70,6 @@ void	sign_check_dist_to_obj(t_sign *sign, t_cl *cl)
 	i = 0;
 	while (sign[i].shape != 0)
 	{
-		sign[i].io = 0;
-		sign[i].i = 0;
 		if (sign[i].shape == 4)
 		{
 			sign[i].vector = make_normal(sign[i]);

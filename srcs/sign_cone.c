@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:58:52 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/19 11:54:04 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/20 11:56:09 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,16 +60,10 @@ int	cone_check_light(t_cl *cl, t_sign *sign)
 
 	angle = calculate_angle_vectors(*sign, *cl, &len, 0);
 	if (angle < 0.0001)
-	{
-		sign->io = 1;
 		return (1);
-	}
 	dist = sin(angle) * len;
 	if (rad_c(cl, dist, curr_r(get_the_side(dist, *sign, *cl), *sign)))
-	{
-		sign->io = 1;
 		return (1);
-	}
 	return (0);
 }
 

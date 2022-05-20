@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:10:14 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/18 18:33:20 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:02:47 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	cone_intersect(t_screen *point, t_sign *sign, t_cl cl)
 		return (0);
 	mtt.y = (-abc.y + sqrt(abc.y * abc.y - 4 * abc.x * abc.z)) / (2 * abc.x);
 	mtt.z = (-abc.y - sqrt(abc.y * abc.y - 4 * abc.x * abc.z)) / (2 * abc.x);
-	return (sign_check(point, sign, mtt.z, cl));
+	return (sign_check(point, mtt.z, cl));
 }
 
 void	cone_cam(t_xy xy, t_screen *point, t_sign *sign, t_cl *cl)

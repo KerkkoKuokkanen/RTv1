@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:29:40 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/17 14:43:01 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:09:25 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	get_cam(char *line, t_cl *cl)
 	}
 	if (count != 6)
 		return (0);
+	cl->cl += 2;
 	return (1);
 }
 

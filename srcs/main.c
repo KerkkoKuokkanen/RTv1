@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:19:41 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/18 18:32:59 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:14:00 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,10 @@ int	main(int argc, char **argv)
 	void	*data;
 	int		pitch;
 
-	init(&cl, argc, argv);
+	init(&cl, argc);
 	sign = create_sign(argv[1], &cl);
+	if (cl.cl != 5)
+		file_error();
 	SDL_Init(SDL_INIT_VIDEO);
 	SDL_CreateWindowAndRenderer(WINDOW_WIDTH, WINDOW_WIDTH,
 		0, &sdl.window, &sdl.renderer);

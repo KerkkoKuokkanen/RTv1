@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:25:05 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/17 14:28:50 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:08:46 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,5 +101,6 @@ int	get_light(char *l, t_cl *cl)
 		}
 		i++;
 	}
+	cl->cl += 3;
 	return (light_end(count, cl));
 }

@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 12:01:55 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/18 18:33:35 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:02:54 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	cylinder_intersect(t_screen *point, t_sign *sign, t_cl cl)
 		return (0);
 	t1 = (-abc.y + sqrt(abc.y * abc.y - 4 * abc.x * abc.z)) / (2 * abc.x);
 	t2 = (-abc.y - sqrt(abc.y * abc.y - 4 * abc.x * abc.z)) / (2 * abc.x);
-	return (sign_check(point, sign, t2, cl));
+	return (sign_check(point, t2, cl));
 }
 
 void	cam_to_cylinder(t_xy xy, t_screen *point, t_sign *sign, t_cl *cl)
