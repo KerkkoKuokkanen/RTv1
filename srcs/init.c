@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 15:02:26 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/20 12:13:46 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/20 13:21:54 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 void	init(t_cl *cl, int argc)
 {
+	if (argc == 1)
+	{
+		write(1, "usage: one parameter file\n", 26);
+		exit(0);
+	}
 	if (argc != 2)
 	{
 		write(1, "error\n", 6);
