@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 15:40:03 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/20 12:04:52 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/20 12:14:19 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,6 @@ long		ft_abs(int n);
 void		plane_sign_check(t_cl *cl, t_sign sign);
 void		sphere_sign_check(t_cl *cl, t_sign *sign, int i);
 void		sign_check_dist_to_obj(t_sign *sign, t_cl *cl);
-void		cone_i(t_sign *sign, int i, t_cl *cl);
 void		while_init(int *i, int *s, t_d *d);
 void		dist_memory(t_draw *drw, t_xy xy);
 void		points_init(t_xy *xy, t_draw *drw, t_sign *sign, t_cl *cl);

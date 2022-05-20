@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 15:02:26 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/20 11:56:31 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/20 12:13:46 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,4 @@ void	while_init(int *i, int *s, t_d *d)
 	*s = (-1);
 	d->dist = 0;
 	d->t_dist = MAX;
-}
-
-void	cone_i(t_sign *sign, int i, t_cl *cl)
-{
-	sign[i].vector = make_normal(sign[i]);
-	make_c_for_cone(&sign[i]);
-	cone_s(cl, &sign[i]);
 }

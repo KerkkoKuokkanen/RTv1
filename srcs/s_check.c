@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 15:13:05 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/20 12:05:07 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/20 12:13:59 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,11 @@ void	sign_check_dist_to_obj(t_sign *sign, t_cl *cl)
 			plane_sign_check(cl, sign[i]);
 		}
 		else if (sign[i].shape == 2)
-			cone_i(sign, i, cl);
+		{
+			sign[i].vector = make_normal(sign[i]);
+			make_c_for_cone(&sign[i]);
+			cone_s(cl, &sign[i]);
+		}
 		else if (sign[i].shape == 3)
 		{
 			sign[i].vector = make_normal(sign[i]);
