@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 15:02:26 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/20 13:21:54 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/26 17:36:50 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,10 @@ void	init(t_cl *cl, int argc)
 	cl->light_seen = 1;
 }
 
-void	points_init(t_xy *xy, t_draw *drw, t_sign *sign, t_cl *cl)
+void	points_init(t_xy *xy, t_sign *sign, t_cl *cl)
 {
 	xy->y = 0;
-	drw->bright = cl->bright;
-	make_min_max(sign, drw);
-	drw->dists = (t_dists **)malloc(sizeof(t_dists *) * 1000);
-	if (!drw->dists)
-		mem_error();
 	sign_check_dist_to_obj(sign, cl);
-}
-
-void	dist_memory(t_draw *drw, t_xy xy)
-{
-	drw->dists[xy.y] = (t_dists *)malloc(sizeof(t_dists) * 1000);
-	if (!drw->dists[xy.y])
-		mem_error();
 }
 
 void	while_init(int *i, int *s, t_d *d)

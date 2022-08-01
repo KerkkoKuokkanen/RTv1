@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 12:07:18 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/18 18:26:28 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/27 13:28:50 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,54 +37,24 @@ void	add_brightnessint(int *color, int b)
 	}
 }
 
-int	count_sub(t_draw *drw, int x, int y)
+int	get_color(t_screen point, int b)
 {
 	int		color;
 	int		ret;
 	double	sub;
-	double	min;
+	double	one;
+	double	di;
 
-	sub = (drw->b[drw->dists[y][x].curr] - drw->l[drw->dists[y][x].curr]);
-	if (sub < 0.00001)
-		color = 200;
-	else if (sub > 10000.f)
-	{
-		min = drw->l[drw->dists[y][x].curr];
-		color = 255.f * (min / drw->dists[y][x].dist);
-	}
-	else
-	{
-		sub = 255.f / (drw->b[drw->dists[y][x].curr]
-				- drw->l[drw->dists[y][x].curr]);
-		color = (drw->b[drw->dists[y][x].curr] - drw->dists[y][x].dist) * sub;
-	}
-	add_brightnessint(&color, drw->bright);
+	one = MULTI / (PI / 2.f);
+	sub = CLR / L_D;
+	di = point.dist + (A_DIST * (one * point.angle));
+	color = CLR - sub * di;
+	if (color < 0)
+		color = 0;
+	add_brightnessint(&color, b);
 	ret = color;
 	ret ^= color << 8;
 	ret ^= color << 16;
 	ret ^= color << 24;
 	return (ret);
-}
-
-void	draw_main(t_draw *drw, void *data)
-{
-	int		x;
-	int		y;
-
-	y = 0;
-	while (y < WINDOW_WIDTH)
-	{
-		x = 0;
-		while (x < WINDOW_WIDTH)
-		{
-			if ((int)drw->dists[y][x].dist != (-1))
-				draw(data, x, y, count_sub(drw, x, y));
-			x++;
-		}
-		free(drw->dists[y]);
-		y++;
-	}
-	free(drw->b);
-	free(drw->l);
-	free(drw->dists);
 }

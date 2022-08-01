@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 12:01:55 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/19 12:02:54 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/23 12:04:07 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ int	cylinder_intersect(t_screen *point, t_sign *sign, t_cl cl)
 	t_dot	xyz;
 	t_dot	vec;
 	t_dot	abc;
-	double	t1;
 	double	t2;
 
 	xyz.x = point->x - sign->x;
@@ -71,7 +70,6 @@ int	cylinder_intersect(t_screen *point, t_sign *sign, t_cl cl)
 		return (2);
 	else if (abc.x == 0.f)
 		return (0);
-	t1 = (-abc.y + sqrt(abc.y * abc.y - 4 * abc.x * abc.z)) / (2 * abc.x);
 	t2 = (-abc.y - sqrt(abc.y * abc.y - 4 * abc.x * abc.z)) / (2 * abc.x);
 	return (sign_check(point, t2, cl));
 }

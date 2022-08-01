@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:10:14 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/19 12:02:47 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/23 12:05:14 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,21 +53,21 @@ int	cone_intersect(t_screen *point, t_sign *sign, t_cl cl)
 	t_dot	xyz;
 	t_dot	vec;
 	t_dot	abc;
-	t_dot	mtt;
+	double	x;
+	double	t;
 
 	xyz.x = point->x - sign->x;
 	xyz.y = point->y - sign->y;
 	xyz.z = point->z - sign->z;
-	mtt.x = cone_m(*sign);
+	x = cone_m(*sign);
 	cyl_vec_calc(*point, &vec, cl);
-	abc = cone_abc(vec, xyz, *sign, mtt.x);
+	abc = cone_abc(vec, xyz, *sign, x);
 	if ((abc.y * abc.y - 4 * abc.x * abc.z) < 0)
 		return (2);
 	else if (abc.x == 0.f)
 		return (0);
-	mtt.y = (-abc.y + sqrt(abc.y * abc.y - 4 * abc.x * abc.z)) / (2 * abc.x);
-	mtt.z = (-abc.y - sqrt(abc.y * abc.y - 4 * abc.x * abc.z)) / (2 * abc.x);
-	return (sign_check(point, mtt.z, cl));
+	t = (-abc.y - sqrt(abc.y * abc.y - 4 * abc.x * abc.z)) / (2 * abc.x);
+	return (sign_check(point, t, cl));
 }
 
 void	cone_cam(t_xy xy, t_screen *point, t_sign *sign, t_cl *cl)

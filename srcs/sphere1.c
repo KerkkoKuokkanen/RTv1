@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 15:43:06 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/19 12:14:40 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/06/16 13:14:54 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	intersect_sphere(t_screen *point, t_sign *sign, t_cl cl, int curr)
 {
 	double	t2;
-	double	t1;
 	t_dot	abc;
 	t_dot	xyz;
 	t_dot	vec;
@@ -32,7 +31,6 @@ int	intersect_sphere(t_screen *point, t_sign *sign, t_cl cl, int curr)
 		return (2);
 	else if (abc.x == 0)
 		return (0);
-	t1 = (-abc.y + sqrt(abc.y * abc.y - 4 * abc.x * abc.z)) / (2 * abc.x);
 	t2 = (-abc.y - sqrt(abc.y * abc.y - 4 * abc.x * abc.z)) / (2 * abc.x);
 	return (sign_check(point, t2, cl));
 }

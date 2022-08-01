@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:58:52 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/20 12:12:57 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/05/26 16:22:12 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,13 @@ void	light_side(t_cl *cl, t_sign *sign)
 		cl->light_seen = 0;
 }
 
-int	cone_check_light(t_cl *cl, t_sign *sign)
+int	cone_check_light(t_cl *cl, t_sign *sign, int s)
 {
 	double	angle;
 	double	len;
 	double	dist;
 
-	angle = calculate_angle_vectors(*sign, *cl, &len, 0);
+	angle = calculate_angle_vectors(*sign, *cl, &len, s);
 	if (angle < 0.0001)
 		return (1);
 	dist = sin(angle) * len;
@@ -72,8 +72,8 @@ void	cone_s(t_cl *cl, t_sign *sign)
 	int	light;
 	int	cam;
 
-	light = cone_check_light(cl, sign);
-	cam = cone_check_light(cl, sign);
+	light = cone_check_light(cl, sign, 0);
+	cam = cone_check_light(cl, sign, 1);
 	if ((light == 1 && cam == 0) || (light == 0 && cam == 1))
 		cl->light_seen = 0;
 	else if (light == 1 && cam == 1)

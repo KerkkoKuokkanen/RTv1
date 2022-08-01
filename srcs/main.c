@@ -6,7 +6,7 @@
 /*   By: kkuokkan <kkuokkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:19:41 by kkuokkan          #+#    #+#             */
-/*   Updated: 2022/05/19 12:14:00 by kkuokkan         ###   ########.fr       */
+/*   Updated: 2022/06/22 14:40:10 by kkuokkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ t_screen	cam_to_screen(t_xy xy, t_sign *sign, t_cl *cl)
 	while_init(&i, &s, &d);
 	while (sign[i].shape != 0 && sign[i].shape != (-1))
 	{
-		point.l_tru = 0;
 		point.tru = 0;
 		cast_to_function(xy, &point, &sign[i], cl);
 		if (point.tru == 1)
@@ -45,28 +44,27 @@ void	points_on_the_screen(void *data, t_sign *sign, t_cl cl)
 {
 	t_xy		xy;
 	t_screen	point;
-	t_draw		drw;
 
-	points_init(&xy, &drw, sign, &cl);
+	points_init(&xy, sign, &cl);
 	while (xy.y < WINDOW_WIDTH)
 	{
 		xy.x = 0;
-		dist_memory(&drw, xy);
 		while (xy.x < WINDOW_WIDTH)
 		{
-			drw.dists[xy.y][xy.x].dist = (-1);
 			point = cam_to_screen(xy, sign, &cl);
 			if (point.tru == 1)
 			{
 				if (check_intersections(&point, sign, cl) == 1)
-					if_check(&point, sign, xy, &drw);
+				{
+					choose_obj(sign, &point, cl);
+					draw(data, xy.x, xy.y, get_color(point, cl.bright));
+				}
 			}
 			xy.x++;
 		}
 		xy.y++;
 	}
 	free(sign);
-	draw_main(&drw, data);
 }
 
 void	main_while(SDL_Event ev)
