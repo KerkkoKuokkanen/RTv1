@@ -20,6 +20,6 @@ All of the input comes from a textfile and these example scenes can be found in 
 
 <img width="992" alt="Screen Shot 2023-01-11 at 4 49 53 PM" src="https://user-images.githubusercontent.com/93378894/211837959-e303b228-ca6a-4206-b771-b5e55260f7d4.png">
 
-### Sphere, Cylinder and Cone intersecting inside a big cylinder with a plane in the bottom
+### Sphere, Cylinder and Cone intersecting inside a big cylinder
 
 <img width="895" alt="Screen Shot 2023-01-11 at 4 50 23 PM" src="https://user-images.githubusercontent.com/93378894/211837974-e8c7a961-258a-48a3-84b9-ca24e9efd448.png">
