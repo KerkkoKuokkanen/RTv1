@@ -6,7 +6,7 @@ A simple ray tracing program made in C and SDL that simulates light, shadows and
 
 Program goes through the screen pixel by pixel and looks if there is a part of an object there that is visible from camera. After that the program checks if the light can reach that point without any obstacles and gives that point some color.
 
-All of the input comes from a textfile and these example scenes can be found in the repository. You can add as many objects to the files and move and rotate them around. Camera can also be moved and rotated.
+All of the input comes from a textfile and these example scenes can be found in the repository. You can add as many objects to the files and move and rotate them around. Camera can also be moved and look direction rotated. Light can also be placed anywhere.
 
 #### All of the simple objects in the same scene
 
