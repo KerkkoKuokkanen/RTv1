@@ -2,7 +2,9 @@
 
 ## Summary
 
-A simple ray tracing program made in C that simulates light, shadows and simple objects.
+A simple ray tracing program made in C and SDL that simulates light, shadows and simple objects. All the code can be found in this repository and compiles on macOS, but not on m1 because the SDL framework is not updated.
+
+Program goes through the screen pixel by pixel and looks if there is a part of an object there that is visible from camera. After that program checks if light can reach that point without any obstacles and gives that point some color.
 
 <img width="995" alt="Screen Shot 2023-01-11 at 4 49 37 PM" src="https://user-images.githubusercontent.com/93378894/211837899-f58f7387-199b-431e-8f96-b7cd18bcdbb3.png">
 
